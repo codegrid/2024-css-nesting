@@ -16,7 +16,6 @@
 			max-width: 30em;
 		}
 
-		/* 対応しているブラウザーにはそのプロパティを使用 */
 		@supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
 			.Intro::first-letter {
 				initial-letter: 3;
@@ -24,7 +23,6 @@
 			}
 		}
 
-		/* 対応していないブラウザーには代替スタイルを使用 */
 		@supports not ((initial-letter: 3) or (-webkit-initial-letter: 3)) {
 			.Intro::first-letter {
 				font-size: 3em;
