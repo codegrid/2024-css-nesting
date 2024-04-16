@@ -1,0 +1,51 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>@layer</title>
+
+	<style>
+		@layer base, theme;
+
+		@layer base {
+			body {
+				font-family: sans-serif;
+				padding: 0.5em;
+			}
+
+			p {
+				margin: 0;
+
+				&+& {
+					margin-top: 1em;
+				}
+			}
+		}
+
+		@layer base {
+			.alert {
+				padding: 10px;
+				border: 1px solid;
+			}
+		}
+
+		@layer theme {
+			.alert {
+				color: #660000;
+				background-color: #ffdddd;
+				border-color: #993333;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="alert">
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit.
+		</p>
+	</div>
+
+</body>
