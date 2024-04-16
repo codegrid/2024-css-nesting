@@ -1,0 +1,49 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>@media (nested w/o nesting selector block)</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+			padding: 0.5em;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			display: flex;
+			gap: 1em;
+		}
+
+		.Header {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+
+			@media (min-width: 768px) {
+				flex-direction: row;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="Header">
+		<div class="logo">Logo</div>
+		<nav class="nav">
+			<ul>
+				<li><a href="">Link</a></li>
+				<li><a href="">Link</a></li>
+				<li><a href="">Link</a></li>
+				<li><a href="">Link</a></li>
+			</ul>
+		</nav>
+	</div>
+
+</body>
