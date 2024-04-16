@@ -1,0 +1,74 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>@starting-style</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+			padding: 0.5em;
+		}
+
+		.container {
+			display: grid;
+			gap: 10px;
+
+			margin-top: 1em;
+			max-width: 500px;
+		}
+
+		.box {
+			border: thick solid;
+			padding: 0.25em 0.5em;
+		}
+
+		.box {
+			transition: 0.5s ease-out;
+			/* opacity: 1; */
+		}
+
+		@starting-style {
+			.box {
+				opacity: 0;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<button class="add">add box</button>
+	<button class="reset">reset</button>
+
+	<div class="container"></div>
+
+	<script>
+
+		const addButton = document.querySelector('.add');
+		const resetButton = document.querySelector('.reset');
+		const container = document.querySelector('.container');
+
+		function addBox() {
+			const box = document.createElement('div');
+			box.classList.add('box');
+			box.textContent = 'a box';
+			container.append(box);
+		}
+
+		function resetBox() {
+			container.textContent = null;
+		}
+
+		addButton.addEventListener('click', () => {
+			addBox();
+		});
+
+		resetButton.addEventListener('click', () => {
+			resetBox();
+		});
+
+	</script>
+
+</body>
