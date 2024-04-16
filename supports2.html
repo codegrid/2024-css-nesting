@@ -1,0 +1,46 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>@supports (nested)</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+			padding: 0.5em;
+		}
+
+		.Intro {
+			font-size: 24px;
+			max-width: 30em;
+
+			&::first-letter {
+				color: goldenrod;
+			}
+
+			@supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
+				&::first-letter {
+					-webkit-initial-letter: 3;
+					initial-letter: 3;
+				}
+			}
+
+			@supports not ((initial-letter: 3) or (-webkit-initial-letter: 3)) {
+				&::first-letter {
+					font-size: 3em;
+					float: left;
+				}
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<p class="Intro">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ipsum, assumenda numquam nihil autem quidem, sequi
+		quam officiis error delectus veritatis obcaecati harum voluptate dolores minima possimus itaque. Dignissimos, ipsum.
+	</p>
+
+</body>

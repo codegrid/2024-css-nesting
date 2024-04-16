@@ -1,0 +1,45 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>@supports</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+			padding: 0.5em;
+		}
+
+		.Intro {
+			font-size: 24px;
+			max-width: 30em;
+		}
+
+		/* 対応しているブラウザーにはそのプロパティを使用 */
+		@supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
+			.Intro::first-letter {
+				initial-letter: 3;
+				color: goldenrod;
+			}
+		}
+
+		/* 対応していないブラウザーには代替スタイルを使用 */
+		@supports not ((initial-letter: 3) or (-webkit-initial-letter: 3)) {
+			.Intro::first-letter {
+				font-size: 3em;
+				float: left;
+				color: goldenrod;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<p class="Intro">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ipsum, assumenda numquam nihil autem quidem, sequi
+		quam officiis error delectus veritatis obcaecati harum voluptate dolores minima possimus itaque. Dignissimos, ipsum.
+	</p>
+
+</body>
