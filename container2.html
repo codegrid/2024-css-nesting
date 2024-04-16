@@ -1,0 +1,71 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>@container (nested)</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+			padding: 0.5em;
+		}
+
+		p {
+			margin: 0;
+
+			&+& {
+				margin-top: 1em;
+			}
+		}
+
+		img {
+			background-color: #ddd;
+		}
+
+		.Card {
+			border: medium solid;
+			padding: 1em;
+
+			&+& {
+				margin-top: 1em;
+			}
+		}
+
+		.CardContainer {
+			container: card-container / inline-size;
+		}
+
+		.Card {
+			display: grid;
+			gap: 1em;
+
+			@container card-container (inline-size >=400px) {
+				grid-template-columns: auto 1fr;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="CardContainer">
+		<div class="Card">
+			<img src="" alt="image" width="200" height="160">
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ipsum, assumenda numquam nihil autem quidem,
+				sequi quam officiis error delectus veritatis obcaecati harum voluptate dolores minima possimus itaque.
+				Dignissimos, ipsum.
+			</p>
+		</div>
+		<div class="Card">
+			<img src="" alt="image" width="200" height="160">
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ipsum, assumenda numquam nihil autem quidem,
+				sequi quam officiis error delectus veritatis obcaecati harum voluptate dolores minima possimus itaque.
+				Dignissimos, ipsum.
+			</p>
+		</div>
+	</div>
+
+</body>
