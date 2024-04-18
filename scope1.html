@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8" />
+
+	<title>@scope</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+			padding: 0.5em;
+		}
+
+		:is(p, figure) {
+			margin: 0;
+
+			& + & {
+				margin-top: 1em;
+			}
+		}
+
+		img {
+			background-color: #ddd;
+			vertical-align: bottom;
+		}
+
+		.MarkdownContent {
+			width: 40em;
+			margin-inline: auto;
+
+			img {
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+			}
+		}
+
+		@scope (.MarkdownContent) to (figure) {
+			img {
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+				border-radius: 1em;
+				margin-block: 2em;
+			}
+		}
+
+		.MediaComponent {
+			display: grid;
+			gap: 1em;
+			box-sizing: border-box;
+			width: fit-content;
+			max-width: 20em;
+			margin: 4em auto;
+			border: medium solid;
+			padding: 1em;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<main class="MarkdownContent">
+		<h1>Scope</h1>
+
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+			reprehenderit magni qui eos excepturi similique enim ea architecto neque!
+			Veritatis ipsa aliquid perspiciatis mollitia non voluptatibus quas rerum
+			facere illum.
+		</p>
+
+		<p>
+			<img src="_dummy_800x600.png" alt="image" width="800" height="600" />
+		</p>
+
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+			reprehenderit magni qui eos excepturi similique enim ea architecto neque!
+			Veritatis ipsa aliquid perspiciatis mollitia non voluptatibus quas rerum
+			facere illum.
+		</p>
+
+		<figure class="MediaComponent">
+			<img src="_dummy_200x160.png" alt="image" width="200" height="160" />
+
+			<figcaption>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit.
+			</figcaption>
+		</figure>
+
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+			reprehenderit magni qui eos excepturi similique enim ea architecto neque!
+			Veritatis ipsa aliquid perspiciatis mollitia non voluptatibus quas rerum
+			facere illum.
+		</p>
+
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+			reprehenderit magni qui eos excepturi similique enim ea architecto neque!
+			Veritatis ipsa aliquid perspiciatis mollitia non voluptatibus quas rerum
+			facere illum.
+		</p>
+	</main>
+</body>
